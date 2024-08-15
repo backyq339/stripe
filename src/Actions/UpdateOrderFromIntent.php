@@ -26,7 +26,7 @@ class UpdateOrderFromIntent
 
             $placedAt = null;
 
-            if ($paymentIntent->status === PaymentIntent::STATUS_SUCCEEDED) {
+            if ($paymentIntent->status === PaymentIntent::STATUS_SUCCEEDED || $paymentIntent->status === PaymentIntent::STATUS_REQUIRES_CAPTURE) {
                 $placedAt = now();
             }
 
